@@ -1,0 +1,15 @@
+midl_pragma warning(disable: 2471) // Some attributes and/or data types in the idl and/or included/imported idl files can not be represented in the type library: size_is/length_is etc.
+midl_pragma warning(disable: 2461) // inapplicable attribute : [restricted] [ Field 'blah' of Struct 'BLAH' ( Parameter 'blahblah' ) ]
+midl_pragma warning(disable: 2231) // no remote procedures specified in non-[local] interface; no client/server stubs will be generated : [ Interface 'IBlah'  ]
+
+[
+	uuid(dc0d33f1-a8e6-41de-9824-30c8813495c1),
+	helpstring("Windows Http Server API"),
+	version(2.0)
+]
+library WinHttpServer
+{
+    #include "windef.idl"
+	#include "SockAddr.idl"
+ 	#include "http.idl"
+};

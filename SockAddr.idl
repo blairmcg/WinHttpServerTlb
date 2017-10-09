@@ -1,0 +1,97 @@
+typedef
+[
+	helpstring("IPv4 Internet address. This is an 'on-wire' format structure."),
+	uuid(87B4C5F6-026E-11D3-9FD7-00A0CC3E4A32)
+]
+struct IN_ADDR {
+	union {
+		[hidden]struct { UCHAR s_b1, s_b2, s_b3, s_b4; };
+		[hidden]struct { USHORT s_w1, s_w2; };
+		ULONG s_addr;
+	};
+} IN_ADDR;
+
+typedef [public] USHORT ADDRESS_FAMILY;
+
+typedef
+	[
+		helpstring("Local or remote endpoint address in Internet family style (i.e. IPv4).  Except for the sin*_family parameter, contents are expressed in network byte order."),
+		uuid(87B4C611-026E-11D3-9FD7-00A0CC3E4A32)
+	]
+struct SOCKADDR_IN {
+	[helpstring("Address family (must be AF_INET).")]
+	ADDRESS_FAMILY  sin_family;
+	[helpstring("IP port, in network byte order.")]
+	USHORT sin_port;
+	[helpstring("IPv4 address")]
+	IN_ADDR sin_addr;
+	[hidden, helpstring("Padding to make structure the same size as SOCKADDR.")]
+	BYTE    sin_zero[8];
+} SOCKADDR_IN;
+
+typedef ULONG SCOPE_ID;
+
+typedef
+[
+	uuid(0299D3DE-9695-4177-9CE6-42AD495C8E57),
+	helpstring("Structure used by kernel to store most addresses.")
+]
+struct SOCKADDR
+{
+	[helpstring("Address family; AF_INET if an IPv4 address, AF_INET6 if IPv6")]
+	ADDRESS_FAMILY sa_family;
+	[hidden, helpstring("Up to 14 bytes of direct address (note in network order, not host order)")]
+	char    sa_data[14];
+} SOCKADDR;
+typedef SOCKADDR *PSOCKADDR, *LPSOCKADDR;
+
+typedef
+	[
+		helpstring(""),
+		uuid(BEBF4C25-CE63-4511-B68E-2434810FA9C3)
+	]
+struct IN6_ADDR {
+	union {
+		UCHAR       Bytes[16];
+		[hidden]USHORT      Words[8];
+	};
+} IN6_ADDR;
+
+typedef
+[
+	helpstring("Specifies a transport address and port for the AF_INET6 address family. All of the data in the structure, except for the address family, is specified in network-byte-order (big-endian)."),
+	uuid(A989CFCF-96F5-40B8-9904-CB33F7C78940)
+]
+struct SOCKADDR_IN6 {
+	[helpstring("Address family; must be AF_INET6")]
+	ADDRESS_FAMILY sin6_family;
+	[helpstring("Transport level port number in network byte order")]
+	USHORT sin6_port;
+	[helpstring("IPv6 flow information in network byte order")]
+	ULONG  sin6_flowinfo;
+	[helpstring("IPv6 address")]
+	IN6_ADDR sin6_addr;
+	union {
+		[helpstring("IPv6 scope identifier that is defined in the sin6_scope_struct member, in network byte order")]
+		ULONG sin6_scope_id;
+		[hidden, helpstring("Contains the scope identifier for the IPv6 transport address")]
+		SCOPE_ID sin6_scope_struct;
+	};
+} SOCKADDR_IN6;
+
+#pragma pack(push,8)
+typedef
+	[
+		uuid(FF1980C9-D114-4E61-8569-E2ED5321209B),
+		helpstring("A generic structure that specifies a transport address")
+	]
+struct SOCKADDR_STORAGE
+{
+	[hidden]ADDRESS_FAMILY ss_family;
+	[hidden]BYTE __ss_pad1[6];
+	[hidden]__int64 __ss_align;
+	[hidden]BYTE __ss_pad2[112];
+} SOCKADDR_STORAGE;
+#pragma pack(pop)
+
+typedef SOCKADDR_STORAGE *PSOCKADDR_STORAGE;

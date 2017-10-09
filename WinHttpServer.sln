@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinHttpServer", "WinHttpServer.vcxproj", "{0D9832EC-F75E-4269-A2E3-C43014A375B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Ansi|Win32 = Ansi|Win32
+		Unicode|Win32 = Unicode|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D9832EC-F75E-4269-A2E3-C43014A375B0}.Ansi|Win32.ActiveCfg = Ansi|Win32
+		{0D9832EC-F75E-4269-A2E3-C43014A375B0}.Ansi|Win32.Build.0 = Ansi|Win32
+		{0D9832EC-F75E-4269-A2E3-C43014A375B0}.Unicode|Win32.ActiveCfg = Unicode|Win32
+		{0D9832EC-F75E-4269-A2E3-C43014A375B0}.Unicode|Win32.Build.0 = Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
