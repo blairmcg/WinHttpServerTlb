@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/github/blairmcg/WinHttpServerTlb?branch=master&svg=true)](https://ci.appveyor.com/project/blairmcg/winhttpservertlb)
+
 # WinHttpServerTlb
 Windows Http Server Type Library
 
