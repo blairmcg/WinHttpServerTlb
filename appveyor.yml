@@ -11,5 +11,5 @@ build:
   project: WinHttpServer.sln
   verbosity: minimal
 artifacts:
-- path: Unicode\WinHttpServer.tlb
+- path: Release\WinHttpServer.tlb
   name: WinHttpServer.tlb
