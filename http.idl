@@ -463,14 +463,14 @@ struct HTTP_LOGGING_INFO
 	ULONG LoggingFlags;
 
 	[helpstring("Optional informational software directive string for W3C type logging. Not used for other types of logging. If nothing is provided here HTTPAPI will log a default string. Any arbitrary string could be used here to identify the application.")]
-	PCWSTR SoftwareName;
+	_Counted_String_Ptr_(SoftwareNameLength>>1) PCWSTR SoftwareName;
 	[helpstring("Length of SoftwareName in number of bytes. Cannot be greater than MAX_PATH.")]
 	USHORT SoftwareNameLength;
 
 	[helpstring("Length of DirectoryName in number of bytes. Cannot be greater than MAX_PATH.")]
 	USHORT DirectoryNameLength;
 	[helpstring("Log file directory must be a fully qualified path.")]
-	PCWSTR DirectoryName;
+	_Counted_String_Ptr_(DirectoryNameLength>>1) PCWSTR DirectoryName;
 
 	[helpstring("Specifies the format for the log files.")]
 	HTTP_LOGGING_TYPE Format;
