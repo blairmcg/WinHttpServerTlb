@@ -4,5 +4,4 @@ WinHttpServer.h
 *.VC.*
 *.vcxproj.user
 *.vcxproj.filters
-Ansi
-Unicode
+Release
