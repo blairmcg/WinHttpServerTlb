@@ -1,0 +1,15 @@
+version: 1.0.{build}
+pull_requests:
+  do_not_increment_build_number: true
+skip_tags: true
+skip_branch_with_pr: true
+image: Visual Studio 2017
+install:
+- cmd: >-
+    git submodule update --init --recursive
+build:
+  project: WinHttpServer.sln
+  verbosity: minimal
+artifacts:
+- path: Unicode\WinHttpServer.tlb
+  name: WinHttpServer.tlb
