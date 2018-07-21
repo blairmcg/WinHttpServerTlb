@@ -63,7 +63,7 @@
       </CPreprocessOptions>
       <TypeLibFormat>NewFormat</TypeLibFormat>
       <DefaultCharType>Unsigned</DefaultCharType>
-      <AdditionalIncludeDirectories>common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)common</AdditionalIncludeDirectories>
     </Midl>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode|Win32'">
@@ -77,7 +77,7 @@
       <TypeLibFormat>NewFormat</TypeLibFormat>
       <PreprocessorDefinitions>_WIN32_WINNT=0x0A00;WINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DefaultCharType>Unsigned</DefaultCharType>
-      <AdditionalIncludeDirectories>common</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)common</AdditionalIncludeDirectories>
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
